@@ -1,0 +1,44 @@
+<div class="container">
+  <h1>PASTELERIA</h1>
+
+
+  <h3> Pastelerias </h3>
+
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+          <pre>
+            {{pasteleria | json}}
+          </pre>
+          <label class="col-form-label">Nombre</label>
+          <input class="form-control"
+                placeholder="Ingrese nueva pasteleria"
+                [(ngModel)]="pasteleria.nombre" type="text"/>
+          <label class="col-form-label">Ciudad</label>
+          <input class="form-control"
+                placeholder="Ingrese nueva pasteleria"
+                [(ngModel)]="pasteleria.ciudad" type="text"/>
+          <label class="col-form-label">Correo</label>
+          <input class="form-control"
+                placeholder="Ingrese nueva pasteleria"
+                [(ngModel)]="pasteleria.correo" type="text"/>
+
+          <button class="btn btn-sucess" type="button" (click)="crearPasteleria()" name="button">
+            Crear pasteleria
+          </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4"
+          *ngFor="let pasteleria of pastelerias;let i= index">
+      <app-pastelerias [pasteleria] = "pasteleria"></app-pastelerias>
+    </div>
+  </div>
+
+
+
+
+</div>
